@@ -4,6 +4,8 @@ class Post < ApplicationRecord
 
   acts_as_likeable
 
-  validates :picture, presence: true
+  validates :picture, :title, :body, :user, presence: true
+
+  default_scope { order(created_at: :desc) }
 
 end

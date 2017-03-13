@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-8">
             <h2 class="text-uppercase text-center">
-                  <%= @posts.title %>
+                <%= @posts.title %>
             </h2>
             <div>
                 By
@@ -50,17 +50,17 @@
 <hr>
 
 <div class="container-fluid">
-  <div class="col-md-12 text-uppercase text-center" id="most_popular">
-    <h2>Most Popular Posts</h2>
-  </div>
-  <div class="row">
-    <% @most_popular.each do |post| %>
-      <div class="col-md-3 popular">
-        <span class="bottom_titles"><%= post.title %></span>
-        <%= link_to post do %>
-          <%= image_tag post.picture, class: "img-responsive center-block" %>
+    <div class="col-md-12 text-uppercase text-center" id="most_popular">
+        <h2>Most Recent Grumbles</h2>
+    </div>
+    <div class="row">
+        <% @most_popular.each do |post| %>
+        <div class="col-md-3 popular">
+            <span class="bottom_titles"><%= post.title %></span>
+            <%= link_to post do %>
+            <%= image_tag post.picture, class: "img-responsive center-block" %>
+            <% end %>
+        </div>
         <% end %>
-      </div>
-    <% end %>
-  </div>
+    </div>
 </div>

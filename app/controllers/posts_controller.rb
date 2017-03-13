@@ -31,6 +31,9 @@ class PostsController < ApplicationController
     redirect_to :root
   end
 
+  def edit
+    @posts = Post.find(params[:id])
+  end
 
 
   private

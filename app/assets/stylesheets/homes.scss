@@ -7,3 +7,41 @@
   display: inline;
 
 }
+
+.jumbotron {
+  background-image: image-url("background.jpg");
+  background-size: cover;
+  height: 30vw;
+  background-position: 25%;
+  text-align: center;
+
+  img {
+    height: 30px;
+  }
+
+  .navbar-text {
+    color: silver;
+    font-size: 20px;
+  }
+
+  h1{
+    color: silver;
+  }
+  h4{
+    color: silver;
+  }
+
+.navbar {
+    margin-bottom: 0px;
+    padding-right: 100px;
+
+    .navbar-header {
+      padding-top: 12px;
+      padding-left: 150px;
+    }
+  }
+}
+
+#footer{
+  margin-top: 500px;
+}
