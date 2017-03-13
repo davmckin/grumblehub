@@ -1,14 +1,20 @@
-<h1>add your own post</h1>
+<% if @posts.errors.any? %>
+<div class="bg-danger col-xc-12">
+    <ul class="list-unstyled">
+        <% @posts.errors.full_messages.each do |message| %>
+        <li>
+            <% message%>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<%end%>
 
-<%=form_for @post do |f| %>
+<%=form_for @posts do |f| %>
 
 <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
-</div>
-<div>
-    <%= f.label :picture %>
-    <%= f.text_field :picture %>
 </div>
 <div>
     <%= f.label :body %>

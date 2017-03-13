@@ -4,4 +4,6 @@ class Post < ApplicationRecord
 
   acts_as_likeable
 
+  validates :picture, presence: true
+
 end
