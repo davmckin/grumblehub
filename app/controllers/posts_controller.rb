@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-     @posts = Post.order(created_at: :desc)
+    @posts = Post.page(params[:page])
   end
 
 
@@ -25,6 +25,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def delete
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to :root
+  end
 
 
 
