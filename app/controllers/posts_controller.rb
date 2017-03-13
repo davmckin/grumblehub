@@ -6,8 +6,8 @@ class PostsController < ApplicationController
 
 
   def show
-      @post = Post.find(params[:id])
-      @user = @post.user
+      @posts = Post.find(params[:id])
+      @user = @posts.user
       @most_popular = Post.order(created_at: :desc).offset(1).limit(4)
       render "homes/index"
   end
