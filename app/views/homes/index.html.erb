@@ -21,14 +21,14 @@
                 <button class="btn share" type="submit">Share This Post</button>
             </div>
         </div>
-        <div class="col-md-4 sidebar">
+        <div class="col-md-4" id="sidebar">
             <div class="text-center">
                 <div class="row">
                     <%= image_tag @user.avatar, class: "img-circle center-block img-responsive"%>
                 </div>
                 <h4 class="text-uppercase"><%= @posts.user.username %></h4>
-                <div class="row social_media">
-                    <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12" id="social_media">
                         <ul>
                             <li><%= link_to "Twitter", "https://twitter.com/dj__MAC?lang=en" %></li>
                             <li><%= link_to "Facebook", "https://www.facebook.com/grumpyoldmenmovie/" %></li>

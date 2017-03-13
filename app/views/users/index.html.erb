@@ -1,4 +1,7 @@
-<%@users.each do |user| %>
-  <div>
-    
+<div class="row">
+  <div class="col-xs-9">
+    <% @users.each do |user| %>
+      <%= render user %>
+    <% end %>
   </div>
+</div>
