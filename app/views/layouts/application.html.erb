@@ -17,15 +17,20 @@
                 </div>
                 <p class="navbar-text">GrumbleHub</p>
                 <form class="navbar-form navbar-right">
-                  <%= link_to "Post!", new_post_path, class: "btn btn-success" %>
+                    <% if current_user %>
+                    <%= link_to "Logout!", logout_path, method: :delete, class: "btn btn-danger" %>
+                    <%= link_to "Post!", new_post_path, class: "btn btn-success" %>
+                    <%= link_to "About!", abouts_path, class: "btn btn-primary" %>
+                <% else %>
+                    <%= link_to "About!", abouts_path, class: "btn btn-primary" %>
+                    <%= link_to "Login!", login_path, class: "btn btn-primary" %>
+                    <%= link_to "Signup!", new_user_path, class: "btn btn-primary" %>
+                    <% end%>
                     <div class="form-group has-feedback">
                         <input type="text" class="form-control" placeholder="Search">
                         <i class="glyphicon glyphicon-search form-control-feedback"></i>
                     </div>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><%= link_to "About", "/abouts" %></li>
-                </ul>
             </nav>
 
             <div class="container">
