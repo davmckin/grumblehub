@@ -1,11 +1,17 @@
-<div class="media">
-  <div class="media-left">
-    <%= link_to post.user do %>
-      <%= image_tag post.user.avatar, class: "media-object img-circle" %>
-    <% end %>
-  </div>
-  <div class="media-body">
-    <%= simple_format post.body %>
-    <strong>Posted by <%= link_to post.user.username, post.user, class: "btn btn-default" %> <%= link_to "#{time_ago_in_words(post.created_at)} ago", post %> :: <%= button_to "delete", post, method: :delete, class: "btn btn-danger" %></strong>
-  </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+            <%= link_to post.user do %>
+            <%= image_tag post.user.avatar, class: "media-object img-circle" %>
+            <% end %>
+        </div>
+        <div class="media-body">
+            <%= simple_format post.body %>
+            <strong>Posted by
+                <%= link_to post.user.username, post.user, class: "btn btn-default" %>
+                <%= link_to "#{time_ago_in_words(post.created_at)} ago", post %>
+                ::
+                <%= button_to "delete", post, method: :delete, class: "btn btn-danger" %></strong>
+        </div>
+    </div>
 </div>

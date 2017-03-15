@@ -15,7 +15,7 @@
                 <div class="navbar-header">
                     <%= image_tag "logo-surf-and-paddle.svg"%>
                 </div>
-                <p class="navbar-text">GrumbleHub</p>
+                <p class="navbar-text"><%= link_to "GrumbleHub", root_path %></p>
                 <form class="navbar-form navbar-right">
                     <% if current_user %>
                     <%= link_to "Logout!", logout_path, method: :delete, class: "btn btn-danger" %>
