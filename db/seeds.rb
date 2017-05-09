@@ -1,7 +1,9 @@
 15.times do
   user = User.create!(
     username: Faker::StarWars.character,
-    avatar: Faker::Avatar.image('my-own-slug', '50x50', 'jpg')
+    avatar: Faker::Avatar.image('my-own-slug', '50x50', 'jpg'),
+    password: Faker::Pokemon.name,
+    email: Faker::Internet.safe_email
   )
 
   rand(1..4).times do

@@ -1,25 +1,28 @@
-<h1>add your own post</h1>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-<%=form_for @post do |f| %>
+        <h1>Add your own post</h1>
 
-<div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-</div>
-<div>
-    <%= f.label :picture %>
-    <%= f.text_field :picture %>
-</div>
-<div>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-</div>
-<div>
-    <%= f.label :user_id %>
-    <%= f.select :user_id, User.all.collect{|u| [u.username, u.id]} %>
-</div>
-<div>
-    <%= f.submit class: "btn btn-primary" %>
-</div>
+        <%=form_for @post do |f| %>
 
-<%end%>
+        <div>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+        </div>
+        <div>
+            <%= f.label :picture %>
+            <%= f.text_field :picture %>
+        </div>
+        <div>
+            <%= f.label :body %>
+            <%= f.text_area :body %>
+        </div>
+
+        <div>
+            <%= f.submit class: "btn btn-primary" %>
+        </div>
+
+        <%end%>
+
+    </div>
+</div>
