@@ -44,7 +44,7 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'rename'
 gem 'rails_12factor', group: :production
 gem 'simple_form'
-gem 'carrierwave'
+gem 'carrierwave', '~> 1.0'
 gem 'figaro'
 gem 'mini_magick'
 gem 'cloudinary'
