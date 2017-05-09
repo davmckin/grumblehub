@@ -10,8 +10,17 @@
             <strong>Posted by
                 <%= link_to post.user.username, post.user, class: "btn btn-default" %>
                 <%= link_to "#{time_ago_in_words(post.created_at)} ago", post %>
-                ::
-                <%= button_to "delete", post, method: :delete, class: "btn btn-danger" %></strong>
+                <% if post.is_owner? current_user %>
+                <%= button_to "delete", post, method: :delete, class: "btn btn-danger" %>
+                <% end%>
+                </strong>
+                <div>
+                <% if post.picture? %>
+                <div class="media-right picture"
+                <%= image_tag chirp.photo.versions[:thumb].url, class: "img-responsive", alt: chirp.body %>
+              </div>
+              <% end %>
+              </div>
         </div>
     </div>
 </div>

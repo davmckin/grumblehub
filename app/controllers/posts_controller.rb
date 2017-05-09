@@ -42,4 +42,12 @@ class PostsController < ApplicationController
     params.require(:post).permit(:user_id, :body, :title, :picture)
   end
 
+  def is_owner
+    @post = current_user.post.find_by(id: params[:id])
+    unless @post && @post.user == current_user
+      flash[:danger] = "Users may only interact with their own posts."
+      redirect_to :root
+    end
+  end
+
 end

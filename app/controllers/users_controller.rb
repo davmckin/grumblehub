@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 before_action :find_user, only: [:edit, :show, :update]
 before_action :require_user, only: [:edit, :update]
+before_action :require_self, only: [:edit, :update]
 
   def index
     @user = User.all
@@ -38,6 +39,12 @@ before_action :require_user, only: [:edit, :update]
 
   private
 
+    def require_self
+      unless @user == current_user
+        flash[:danger] = "Users may only interact with their own posts."
+        redirect_to :root
+      end
+    end
 
     def user_params
       params.require(:user).permit(:username, :avatar, :password, :email)
